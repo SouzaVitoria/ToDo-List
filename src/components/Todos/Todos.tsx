@@ -29,6 +29,11 @@ export function Todos() {
     setTasks(updateTask)
   }
 
+  const handleDeletedTodo = (id: number) => {
+    const updateTask = tasks.filter(task => task.id !== id)
+    setTasks(updateTask)
+  }
+
   return (
     <div className="container">
       <Form todos={tasks} setTodo={setTasks} />
@@ -54,7 +59,12 @@ export function Todos() {
           {
             tasks.map((task: ITask) => {
               return (
-                <Todo key={task.id} todo={task} onCheckedTodo={handleCheckedTodo} />
+                <Todo
+                  key={task.id}
+                  todo={task}
+                  onCheckedTodo={handleCheckedTodo}
+                  onDeletedTask={handleDeletedTodo}
+                />
               )
             })
           }

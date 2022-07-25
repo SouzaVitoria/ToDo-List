@@ -2,7 +2,7 @@ import { Trash } from "phosphor-react";
 import { TaskProps } from "../../typings/typings";
 import styles from "./Todo.module.css"
 
-export function Todo({ todo, onCheckedTodo }: TaskProps) {
+export function Todo({ todo, onCheckedTodo, onDeletedTask }: TaskProps) {
   return (
     <div className={`${styles.todo} ${todo.done ? styles.selectedTodo : ""}`}>
       <a
@@ -15,7 +15,10 @@ export function Todo({ todo, onCheckedTodo }: TaskProps) {
         </p>
       </a>
 
-      <button className={styles.trash}>
+      <button
+        className={styles.trash}
+        onClick={() => onDeletedTask(todo.id)}
+      >
         <Trash size={24} />
       </button>
     </div>
