@@ -26,12 +26,7 @@ export function Todos() {
         </div>
 
         <div className={styles.todosContent}>
-          {
-            todos.map(todo => {
-              return <Todo />
-            })
-          }
-
+          {todos.map(() => <Todo />)}
         </div>
       </div>
     </div>
