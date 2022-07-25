@@ -14,9 +14,9 @@ export function Todos() {
           </p>
         </div>
 
-        <div className="nothingToDo">
-          <ClipboardText size={56} />
-          <div className="messages">
+        <div className={styles.nothingToDo}>
+          <ClipboardText size={56} color="#333333" />
+          <div className={styles.messages}>
             <strong> Você ainda não tem tarefas cadastradas </strong>
             <p> Crie tarefas e organize seus itens a fazer </p>
           </div>
