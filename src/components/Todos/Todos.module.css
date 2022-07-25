@@ -24,6 +24,7 @@
   padding: 0.125rem 0.5rem;
   background-color: var(--gray-400);
   border-radius: 50%;
+  margin-left: 8px;
 }
 
 .nothingToDo {
