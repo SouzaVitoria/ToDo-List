@@ -21,7 +21,7 @@
   transition: 0.2s background-color;
 }
 
-svg {
+.todo svg {
   color: var(--gray-300);
 }
 
