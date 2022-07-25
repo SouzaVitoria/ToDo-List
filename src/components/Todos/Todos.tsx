@@ -1,4 +1,5 @@
 import { ClipboardText } from "phosphor-react";
+import { Todo } from "./Todo";
 import styles from "./Todos.module.css"
 
 export function Todos() {
@@ -20,6 +21,10 @@ export function Todos() {
             <strong> Você ainda não tem tarefas cadastradas </strong>
             <p> Crie tarefas e organize seus itens a fazer </p>
           </div>
+        </div>
+
+        <div className="todo">
+          <Todo />
         </div>
       </div>
     </div>

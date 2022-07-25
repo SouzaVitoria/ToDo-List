@@ -1,0 +1,41 @@
+.todo,
+.selectTodo {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.checkbox {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  border: 2px solid var(--blue);
+}
+
+.trash {
+  background-color: transparent;
+  border: 0;
+  width: 1.8125rem;
+  height: 1.8125rem;
+  display: flex;
+  padding: 0.3rem;
+  transition: 0.2s background-color;
+}
+
+svg {
+  color: var(--gray-300);
+}
+
+button.trash:hover {
+  background-color: var(--gray-400);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button.trash:hover svg {
+  color: var(--danger);
+}
+
+.selectTodo:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
