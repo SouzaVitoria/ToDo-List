@@ -1,14 +1,29 @@
+import { useState } from "react";
 import { ClipboardText } from "phosphor-react";
+import { ITodo } from "../../typings/typings";
 import { Form } from "../Form/Form";
 import { Todo } from "./Todo";
 import styles from "./Todos.module.css"
 
-const todos = [1, 2]
+const todosData = [
+  {
+    id: 1,
+    done: false,
+    task: "Estudar Context API"
+  },
+  {
+    id: 2,
+    done: true,
+    task: "Finalizar a aula 1 da trilha do Ignite de 2022"
+  }
+]
 
 export function Todos() {
+  const [todos, setTodos] = useState<ITodo[]>(todosData)
+
   return (
     <div className="container">
-      <Form />
+      <Form todos={todos} setTodo={setTodos} />
       <div className={styles.todos}>
         <div className={styles.summaryTodos}>
           <p>
