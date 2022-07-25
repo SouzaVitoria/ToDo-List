@@ -1,16 +1,38 @@
 import { useState } from "react";
 import { ClipboardText } from "phosphor-react";
-import { ITask, ITodos } from "../../typings/typings";
+import { ITask } from "../../typings/typings";
 import { Form } from "../Form/Form";
 import { Todo } from "./Todo";
 import styles from "./Todos.module.css"
 
+const todosData = [
+  {
+    id: 1,
+    done: false,
+    task: "Estudar Context API"
+  },
+  {
+    id: 2,
+    done: true,
+    task: "Finalizar a aula 1 da trilha do Ignite de 2022"
+  }
+]
+
 export function Todos() {
-  const [todos, setTodos] = useState<ITodos[]>([])
+  const [tasks, setTasks] = useState<ITask[]>(todosData)
+
+
+  const handleCheckedTodo = (id: number) => {
+    const updateTask = tasks.map(task => task.id === id ? {
+      ...task,
+      done: !task.done
+    } : task)
+    setTasks(updateTask)
+  }
 
   return (
     <div className="container">
-      <Form todos={todos} setTodo={setTodos} />
+      <Form todos={tasks} setTodo={setTasks} />
       <div className={styles.todos}>
         <div className={styles.summaryTodos}>
           <p>
@@ -31,9 +53,9 @@ export function Todos() {
 
         <div className={styles.todosContent}>
           {
-            todos.map((current: ITask) => {
+            tasks.map((task: ITask) => {
               return (
-                <Todo key={current.id} todo={current} />
+                <Todo key={task.id} todo={task} onCheckedTodo={handleCheckedTodo} />
               )
             })
           }
