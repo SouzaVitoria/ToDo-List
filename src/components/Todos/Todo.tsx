@@ -2,12 +2,12 @@ import { Trash } from "phosphor-react";
 import { TaskProps } from "../../typings/typings";
 import styles from "./Todo.module.css"
 
-export function Todo({ todo, onCheckedTodo, onDeletedTask }: TaskProps) {
+export function Todo({ todo, onCompletedTodo, onDeletedTask }: TaskProps) {
   return (
     <div className={`${styles.todo} ${todo.done ? styles.selectedTodo : ""}`}>
       <a
         className={styles.selectTodo}
-        onClick={() => onCheckedTodo(todo.id)}
+        onClick={() => onCompletedTodo(todo.id)}
       >
         <div className={styles.checkbox}></div>
         <p>

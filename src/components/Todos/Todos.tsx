@@ -22,11 +22,17 @@ export function Todos() {
   const [tasks, setTasks] = useState<ITask[]>(todosData)
   const [completedTasks, setCompletedTasks] = useState<number>(0)
 
-  const handleCheckedTodo = (id: number) => {
-    const updateTask = tasks.map(task => task.id === id ? {
-      ...task,
-      done: !task.done
-    } : task)
+  const handleCompletedTodo = (id: number) => {
+    const updateTask = tasks.map(task => {
+      if (task.id === id) {
+        return {
+          ...task,
+          done: !task.done
+        }
+      }
+      return task
+    })
+
     setTasks(updateTask)
   }
 
@@ -74,7 +80,7 @@ export function Todos() {
                 <Todo
                   key={task.id}
                   todo={task}
-                  onCheckedTodo={handleCheckedTodo}
+                  onCompletedTodo={handleCompletedTodo}
                   onDeletedTask={handleDeletedTodo}
                 />
               )

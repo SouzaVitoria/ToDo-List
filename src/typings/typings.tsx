@@ -6,6 +6,6 @@ export interface ITask {
 
 export interface TaskProps {
   todo: ITask
-  onCheckedTodo: (id: number) => void
+  onCompletedTodo: (id: number) => void
   onDeletedTask: (id: number) => void
 }
