@@ -3,7 +3,6 @@ import { TaskProps } from "../../typings/typings";
 import styles from "./Todo.module.css"
 
 export function Todo({ todo, onCheckedTodo }: TaskProps) {
-
   return (
     <div className={`${styles.todo} ${todo.done ? styles.selectedTodo : ""}`}>
       <a

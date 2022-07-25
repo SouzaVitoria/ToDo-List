@@ -21,7 +21,6 @@ const todosData = [
 export function Todos() {
   const [tasks, setTasks] = useState<ITask[]>(todosData)
 
-
   const handleCheckedTodo = (id: number) => {
     const updateTask = tasks.map(task => task.id === id ? {
       ...task,
