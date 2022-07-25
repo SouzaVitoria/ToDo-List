@@ -1,5 +1,7 @@
+import "./global.css"
+
 export function App() {
   return (
-    <div></div>
+    <div> <p>oi</p></div>
   )
 }
