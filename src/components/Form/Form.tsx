@@ -10,7 +10,7 @@ export function Form({ setTodo, todos }: any) {
     setTodo([
       ...todos,
       {
-        id: 2,
+        id: todos.length + 1,
         done: false,
         task
       }
