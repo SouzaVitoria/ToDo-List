@@ -28,4 +28,10 @@
   font-weight: 700;
   font-size: 0.875rem;
   line-height: 1.25rem;
+  transition: 0.3s background-color;
+}
+
+.form button:hover {
+  background-color: var(--blue);
+  cursor: pointer;
 }
