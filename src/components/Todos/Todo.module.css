@@ -4,6 +4,10 @@
   gap: 0.75rem;
 }
 
+.selectTodo {
+  flex: 1;
+}
+
 .todo {
   padding: 1rem;
   background-color: var(--gray-500);
