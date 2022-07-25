@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ClipboardText } from "phosphor-react";
 import { ITask } from "../../typings/typings";
 import { Form } from "../Form/Form";
@@ -20,6 +20,7 @@ const todosData = [
 
 export function Todos() {
   const [tasks, setTasks] = useState<ITask[]>(todosData)
+  const [completedTasks, setCompletedTasks] = useState<number>(0)
 
   const handleCheckedTodo = (id: number) => {
     const updateTask = tasks.map(task => task.id === id ? {
@@ -34,16 +35,27 @@ export function Todos() {
     setTasks(updateTask)
   }
 
+  useEffect(() => {
+    const completedTask = tasks.reduce((previousValue, currentValue) => {
+      if (currentValue.done) {
+        previousValue++
+      }
+      return previousValue
+    }, 0)
+    setCompletedTasks(completedTask)
+  }, tasks)
+
+
   return (
     <div className="container">
       <Form todos={tasks} setTodo={setTasks} />
       <div className={styles.todos}>
         <div className={styles.summaryTodos}>
           <p>
-            Tarefas criadas <strong> 0 </strong>
+            Tarefas criadas <strong> {tasks.length} </strong>
           </p>
           <p>
-            Concluídas <strong> 0 </strong>
+            Concluídas <strong> {completedTasks} de {tasks.length} </strong>
           </p>
         </div>
 
