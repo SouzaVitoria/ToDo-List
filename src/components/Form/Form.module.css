@@ -1,7 +1,7 @@
 .form {
   margin-top: -1.6875rem;
   display: flex;
-  gap: 8px;
+  gap: 0.5rem;
 }
 
 .form input {
@@ -18,7 +18,7 @@
   justify-content: center;
   align-items: center;
   padding: 16px;
-  gap: 8px;
+  gap: 0.5rem;
 
   /* width: 5.625rem; */
   height: 3.25rem;
