@@ -2,6 +2,8 @@ import { ClipboardText } from "phosphor-react";
 import { Todo } from "./Todo";
 import styles from "./Todos.module.css"
 
+const todos = [1, 2]
+
 export function Todos() {
   return (
     <div className="container">
@@ -23,8 +25,13 @@ export function Todos() {
           </div>
         </div>
 
-        <div className="todo">
-          <Todo />
+        <div className={styles.todosContent}>
+          {
+            todos.map(todo => {
+              return <Todo />
+            })
+          }
+
         </div>
       </div>
     </div>
