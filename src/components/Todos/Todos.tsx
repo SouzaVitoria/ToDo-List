@@ -22,8 +22,8 @@ export function Todos() {
   const [tasks, setTasks] = useState<ITask[]>(todosData)
   const [completedTasks, setCompletedTasks] = useState<number>(0)
 
-  const handleCompletedTodo = (id: number) => {
-    const updateTask = tasks.map(task => {
+  const handleCompletedTodo = (id: number): void => {
+    const updateTask: ITask[] = tasks.map((task: ITask) => {
       if (task.id === id) {
         return {
           ...task,
@@ -36,13 +36,13 @@ export function Todos() {
     setTasks(updateTask)
   }
 
-  const handleDeletedTodo = (id: number) => {
-    const updateTask = tasks.filter(task => task.id !== id)
+  const handleDeletedTodo = (id: number): void => {
+    const updateTask: ITask[] = tasks.filter((task: ITask) => task.id !== id)
     setTasks(updateTask)
   }
 
   useEffect(() => {
-    const completedTask = tasks.reduce((previousValue, currentValue) => {
+    const completedTask: number = tasks.reduce((previousValue: number, currentValue: ITask): number => {
       if (currentValue.done) {
         previousValue++
       }

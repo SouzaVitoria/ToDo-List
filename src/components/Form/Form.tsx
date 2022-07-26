@@ -7,14 +7,17 @@ export function Form({ setTodo, todos }: any) {
 
   const handleCreateTask = (event: FormEvent) => {
     event.preventDefault()
-    setTodo([
+
+    const data = [
       ...todos,
       {
         id: todos.length + 1,
         done: false,
         task
       }
-    ])
+    ]
+
+    setTodo(data)
   }
 
   return (
