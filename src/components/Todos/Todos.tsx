@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { ClipboardText } from "phosphor-react";
 import { ITask } from "../../typings/typings";
 import { Form } from "../Form/Form";
-import { Todo } from "./Todo";
+import { Task } from "./Task";
 import styles from "./Todos.module.css"
 
 const todosData = [
@@ -65,28 +65,32 @@ export function Todos() {
           </p>
         </div>
 
-        <div className={styles.nothingToDo}>
-          <ClipboardText size={56} color="#333333" />
-          <div className={styles.messages}>
-            <strong> Você ainda não tem tarefas cadastradas </strong>
-            <p> Crie tarefas e organize seus itens a fazer </p>
-          </div>
-        </div>
-
-        <div className={styles.todosContent}>
-          {
-            tasks.map((task: ITask) => {
-              return (
-                <Todo
-                  key={task.id}
-                  todo={task}
-                  onCompletedTodo={handleCompletedTodo}
-                  onDeletedTask={handleDeletedTodo}
-                />
-              )
-            })
-          }
-        </div>
+        {
+          tasks.length > 0 ? (
+            <div className={styles.todosContent}>
+              {
+                tasks.map((task: ITask) => {
+                  return (
+                    <Task
+                      key={task.id}
+                      todo={task}
+                      onCompletedTodo={handleCompletedTodo}
+                      onDeletedTask={handleDeletedTodo}
+                    />
+                  )
+                })
+              }
+            </div>
+          ) : (
+            <div className={styles.nothingToDo}>
+              <ClipboardText size={56} color="#333333" />
+              <div className={styles.messages}>
+                <strong> Você ainda não tem tarefas cadastradas </strong>
+                <p> Crie tarefas e organize seus itens a fazer </p>
+              </div>
+            </div>
+          )
+        }
       </div>
     </div>
   )
