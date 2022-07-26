@@ -1,0 +1,36 @@
+.backToTop {
+  position: fixed;
+  bottom: 2rem;
+  right: 5rem;
+  background-color: var(--gray-600);
+  border: 0;
+  line-height: 0;
+  color: var(--gray-100);
+  font-size: 0.75rem;
+  border-radius: 50%;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s color;
+}
+
+.backToTop:hover {
+  cursor: pointer;
+  color: var(--purple);
+}
+
+@media screen and (max-width: 1025px) {
+  .backToTop {
+    bottom: 2rem;
+    right: 1rem;
+  }
+}
+
+@media screen and (max-width: 415px) {
+  .backToTop,
+  .backToTop svg {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}

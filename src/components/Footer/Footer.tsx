@@ -1,4 +1,5 @@
 import { Heart } from "phosphor-react";
+import { ButtonScrollToTop } from "../ButtonScrollToTop/ButtonScrollToTop";
 import styles from "./Footer.module.css"
 
 export function Footer() {
@@ -9,6 +10,7 @@ export function Footer() {
         <a href="https://github.com/SouzaVitoria/">Vitória Souza</a>
         <Heart weight="fill" className={styles.heart} />
       </p>
+      <ButtonScrollToTop />
     </footer>
   )
 }
