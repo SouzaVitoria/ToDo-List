@@ -37,10 +37,20 @@ button {
 
 .container {
   max-width: 46rem;
-  margin: 0 auto;
+  margin: 0 auto 2rem;
 }
 
 :focus {
   outline: transparent;
   box-shadow: 0 0 0 2px var(--purple-dark);
+}
+
+@media screen and (max-width: 415px) {
+  html {
+    font-size: 87.5%;
+  }
+
+  .container {
+    padding: 0.75rem;
+  }
 }
