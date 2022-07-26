@@ -60,7 +60,7 @@ export function Todos() {
             Tarefas criadas <strong> {tasks.length} </strong>
           </p>
           <p>
-            Concluídas <strong> {completedTasks} de {tasks.length} </strong>
+            Concluídas <strong> {tasks.length === 0 ? "0 de 0" : `${completedTasks} de ${tasks.length}`} </strong>
           </p>
         </div>
 
