@@ -6,7 +6,7 @@ export function Task({ todo, onCompletedTodo, onDeletedTask }: TaskProps) {
   return (
     <div className={`${styles.todo} ${todo.done ? styles.selectedTodo : ""}`}>
       <a
-        className={styles.selectTodo}
+        className={styles.link}
         onClick={() => onCompletedTodo(todo.id)}
       >
         <div className={styles.checkbox}></div>
