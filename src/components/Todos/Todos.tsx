@@ -5,21 +5,11 @@ import { Form } from "../Form/Form";
 import { Task } from "./Task";
 import styles from "./Todos.module.css"
 
-const todosData = [
-  {
-    id: 1,
-    done: false,
-    task: "Estudar Context API"
-  },
-  {
-    id: 2,
-    done: true,
-    task: "Finalizar a aula 1 da trilha do Ignite de 2022"
-  }
-]
 
 export function Todos() {
-  const [tasks, setTasks] = useState<ITask[]>(todosData)
+  const getTask = localStorage.getItem("To Do List") || ""
+  const tasksData = JSON.parse(getTask)
+  const [tasks, setTasks] = useState<ITask[]>(tasksData)
   const [completedTasks, setCompletedTasks] = useState<number>(0)
 
   const handleCompletedTodo = (id: number): void => {
@@ -34,11 +24,13 @@ export function Todos() {
     })
 
     setTasks(updateTask)
+    dataLocalStorage(updateTask)
   }
 
   const handleDeletedTodo = (id: number): void => {
     const updateTask: ITask[] = tasks.filter((task: ITask) => task.id !== id)
     setTasks(updateTask)
+    dataLocalStorage(updateTask)
   }
 
   useEffect(() => {
@@ -51,10 +43,17 @@ export function Todos() {
     setCompletedTasks(completedTask)
   }, tasks)
 
+  const dataLocalStorage = (data: ITask[]): void => {
+    localStorage.setItem("To Do List", JSON.stringify(data))
+  }
 
   return (
     <div className="container">
-      <Form todos={tasks} setTodo={setTasks} />
+      <Form
+        todos={tasks}
+        setTodo={setTasks}
+        onDataLocalStorage={dataLocalStorage}
+      />
       <div className={styles.todos}>
         <div className={styles.summaryTodos}>
           <p>

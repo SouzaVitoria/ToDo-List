@@ -2,7 +2,7 @@ import { FormEvent, useState } from "react"
 import { PlusCircle } from "phosphor-react";
 import styles from "./Form.module.css"
 
-export function Form({ setTodo, todos }: any) {
+export function Form({ setTodo, todos, onDataLocalStorage }: any) {
   const [task, setTask] = useState<string>("")
 
   const handleCreateTask = (event: FormEvent) => {
@@ -18,6 +18,7 @@ export function Form({ setTodo, todos }: any) {
     ]
 
     setTodo(data)
+    onDataLocalStorage(data)
   }
 
   return (
