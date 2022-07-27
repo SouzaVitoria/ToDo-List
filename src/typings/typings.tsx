@@ -3,6 +3,7 @@ export interface ITask {
   done: boolean
   task: string
   createdAt: Date
+  completedDate?: Date
 }
 
 export interface TaskProps {

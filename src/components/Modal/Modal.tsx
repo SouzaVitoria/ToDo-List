@@ -11,6 +11,13 @@ export function Modal({ todo }: ModalProps) {
   const createdAt = format(new Date(todo.createdAt), "dd'/'LL'/'yyyy' às 'HH':'mm'h'", {
     locale: ptBR
   })
+  let completedDateFormatted = ""
+
+  if (todo.done) {
+    completedDateFormatted = format(new Date(todo.completedDate), "dd'/'LL'/'yyyy' às 'HH':'mm'h'", {
+      locale: ptBR
+    })
+  }
 
   const openModal = () => setIsOpen(true)
   const closeModal = () => setIsOpen(false)
@@ -49,7 +56,7 @@ export function Modal({ todo }: ModalProps) {
               <p>
                 <CheckCircle size={20} weight="fill" color="#0fbf15" />
                 <span>
-                  <strong> Concluída em: </strong> 27/07/2022 ás 14:35
+                  <strong> Concluída em: </strong> {completedDateFormatted}
                 </span>
               </p>
             </div>

@@ -16,7 +16,8 @@ export function Todos() {
       if (task.id === id) {
         return {
           ...task,
-          done: !task.done
+          done: !task.done,
+          completedDate: new Date()
         }
       }
       return task
