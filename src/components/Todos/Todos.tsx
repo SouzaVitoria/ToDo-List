@@ -7,7 +7,7 @@ import styles from "./Todos.module.css"
 
 
 export function Todos() {
-  const getTask = localStorage.getItem("To Do List") || ""
+  const getTask = localStorage.getItem("To Do List") || "[]"
   const tasksData = JSON.parse(getTask)
   const [tasks, setTasks] = useState<ITask[]>(tasksData)
 
