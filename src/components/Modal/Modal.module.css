@@ -24,3 +24,35 @@
   padding: 2rem;
   background-color: var(--gray-500);
 }
+
+.contentModal {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+.contentModal .modalDate {
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+.contentModal .modalDate p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.625rem;
+}
+
+.contentModal .modalDate p strong {
+  display: block;
+  font-size: 0.75rem;
+}
+
+.contentModal .descriptionModal {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  line-height: 1.125rem;
+}
