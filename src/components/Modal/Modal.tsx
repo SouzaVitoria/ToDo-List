@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import styles from "./Modal.module.css"
-import { CheckCircle, PlusCircle } from 'phosphor-react'
+import { CheckCircle, PlusCircle, X } from 'phosphor-react'
 
 export function Modal() {
   const [isOpen, setIsOpen] = useState(false)
@@ -26,7 +26,12 @@ export function Modal() {
         <Dialog.Panel
           className={styles.modalContainer}
         >
-          <button onClick={closeModal}>Close</button>
+          <button
+            className={styles.closeModal}
+            onClick={closeModal}
+          >
+            <X size={20} color="#E25858" />
+          </button>
           <div className={styles.contentModal}>
             <div className={styles.modalDate}>
               <p>
