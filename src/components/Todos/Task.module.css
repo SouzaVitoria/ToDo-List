@@ -77,12 +77,4 @@ button.trash:hover svg {
   flex: 1;
   flex-direction: column;
   padding: 1rem 0 1rem 1rem;
-  /* align-items: flex-end; */
-}
-
-.textContainer a.link {
-  background: linear-gradient(var(--gray-100), transparent);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  max-height: 6.5rem;
 }

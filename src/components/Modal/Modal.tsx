@@ -23,6 +23,7 @@ export function Modal({ todo }: ModalProps) {
       <button
         onClick={openModal}
         className={styles.openModal}
+        title="Ver mais"
       >
         Ver mais
       </button>

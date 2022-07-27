@@ -10,6 +10,7 @@ export function Task({ todo, onCompletedTodo, onDeletedTask }: TaskProps) {
         <a
           className={styles.link}
           onClick={() => onCompletedTodo(todo.id)}
+          title="Completar tarefa"
         >
           <div className={styles.checkbox}></div>
           <p>
