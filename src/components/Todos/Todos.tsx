@@ -10,7 +10,6 @@ export function Todos() {
   const getTask = localStorage.getItem("To Do List") || ""
   const tasksData = JSON.parse(getTask)
   const [tasks, setTasks] = useState<ITask[]>(tasksData)
-  const [completedTasks, setCompletedTasks] = useState<number>(0)
 
   const handleCompletedTodo = (id: number): void => {
     const updateTask: ITask[] = tasks.map((task: ITask) => {
@@ -33,15 +32,12 @@ export function Todos() {
     dataLocalStorage(updateTask)
   }
 
-  useEffect(() => {
-    const completedTask: number = tasks.reduce((previousValue: number, currentValue: ITask): number => {
-      if (currentValue.done) {
-        previousValue++
-      }
-      return previousValue
-    }, 0)
-    setCompletedTasks(completedTask)
-  }, tasks)
+  const completedTasks: number = tasks.reduce((previousValue: number, currentValue: ITask): number => {
+    if (currentValue.done) {
+      previousValue++
+    }
+    return previousValue
+  }, 0)
 
   const dataLocalStorage = (data: ITask[]): void => {
     localStorage.setItem("To Do List", JSON.stringify(data))
