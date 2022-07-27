@@ -1,6 +1,6 @@
 import { Trash } from "phosphor-react";
 import { TaskProps } from "../../typings/typings";
-import { TaskModal } from "../TaskModal/TaskModal";
+import { Modal } from "../Modal/Modal";
 import styles from "./Task.module.css"
 
 export function Task({ todo, onCompletedTodo, onDeletedTask }: TaskProps) {
@@ -16,7 +16,7 @@ export function Task({ todo, onCompletedTodo, onDeletedTask }: TaskProps) {
             {todo.task}
           </p>
         </a>
-        <TaskModal />
+        <Modal />
       </div>
 
       <button
