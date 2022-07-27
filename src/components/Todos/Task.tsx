@@ -1,19 +1,23 @@
 import { Trash } from "phosphor-react";
 import { TaskProps } from "../../typings/typings";
+import { TaskModal } from "../TaskModal/TaskModal";
 import styles from "./Task.module.css"
 
 export function Task({ todo, onCompletedTodo, onDeletedTask }: TaskProps) {
   return (
     <div className={`${styles.todo} ${todo.done ? styles.selectedTodo : ""}`}>
-      <a
-        className={styles.link}
-        onClick={() => onCompletedTodo(todo.id)}
-      >
-        <div className={styles.checkbox}></div>
-        <p>
-          {todo.task}
-        </p>
-      </a>
+      <div className={styles.textContainer}>
+        <a
+          className={styles.link}
+          onClick={() => onCompletedTodo(todo.id)}
+        >
+          <div className={styles.checkbox}></div>
+          <p>
+            {todo.task}
+          </p>
+        </a>
+        <TaskModal />
+      </div>
 
       <button
         className={styles.trash}
