@@ -1,10 +1,16 @@
 import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
-import styles from "./Modal.module.css"
 import { CheckCircle, PlusCircle, X } from 'phosphor-react'
+import { format } from "date-fns"
+import ptBR from "date-fns/locale/pt-BR"
+import { ModalProps } from '../../typings/typings'
+import styles from "./Modal.module.css"
 
-export function Modal() {
+export function Modal({ todo }: ModalProps) {
   const [isOpen, setIsOpen] = useState(false)
+  const createdAt = format(new Date(todo.createdAt), "dd'/'LL'/'yyyy' às 'HH':'mm'h'", {
+    locale: ptBR
+  })
 
   const openModal = () => setIsOpen(true)
   const closeModal = () => setIsOpen(false)
@@ -37,7 +43,7 @@ export function Modal() {
               <p>
                 <PlusCircle size={20} weight="fill" color="#4EA8DE" />
                 <span>
-                  <strong> Criada em: </strong> 26/07/2022 ás 08:00
+                  <strong> Criada em: </strong> {createdAt}
                 </span>
               </p>
               <p>

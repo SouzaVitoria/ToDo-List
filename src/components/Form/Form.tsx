@@ -13,7 +13,8 @@ export function Form({ setTodo, todos, onDataLocalStorage }: any) {
       {
         id: todos.length + 1,
         done: false,
-        task
+        task,
+        createdAt: new Date()
       }
     ]
 

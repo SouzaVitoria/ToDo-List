@@ -16,7 +16,7 @@ export function Task({ todo, onCompletedTodo, onDeletedTask }: TaskProps) {
             {todo.task}
           </p>
         </a>
-        <Modal />
+        <Modal todo={todo} />
       </div>
 
       <button
