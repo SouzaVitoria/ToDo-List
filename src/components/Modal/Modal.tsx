@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
-import { CheckCircle, PlusCircle, X } from 'phosphor-react'
+import { CheckCircle, PlusCircle, X, Flag } from 'phosphor-react'
 import { format } from "date-fns"
 import ptBR from "date-fns/locale/pt-BR"
 import { ModalProps } from '../../typings/typings'
@@ -54,10 +54,24 @@ export function Modal({ todo }: ModalProps) {
                 </span>
               </p>
               <p>
-                <CheckCircle size={20} weight="fill" color="#0fbf15" />
-                <span>
-                  <strong> Concluída em: </strong> {completedDateFormatted}
-                </span>
+                {
+                  completedDateFormatted ? (
+                    <>
+                      <CheckCircle size={20} weight="fill" color="#0fbf15" />
+                      <span>
+                        <strong> Concluída em: </strong> {completedDateFormatted}
+                      </span>
+                    </>
+                  ) : (
+                    <>
+                      <Flag size={20} weight="fill" color="#E25858" />
+                      <span>
+                        <strong> A concluir </strong>
+                      </span>
+                    </>
+                  )
+                }
+
               </p>
             </div>
             <p className={styles.descriptionModal}>
