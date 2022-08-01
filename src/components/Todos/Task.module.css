@@ -65,6 +65,7 @@ button.trash:hover svg {
   background-color: var(--purple-dark);
   border: 0;
   background-origin: border-box;
+  background-position: center;
 }
 
 .todo.selectedTodo p {
