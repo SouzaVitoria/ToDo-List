@@ -1,5 +1,6 @@
 import { FormEvent, useState } from "react"
 import { PlusCircle } from "phosphor-react";
+import { v4 as uuid } from 'uuid';
 import styles from "./Form.module.css"
 
 export function Form({ setTodo, todos, onDataLocalStorage }: any) {
@@ -11,7 +12,7 @@ export function Form({ setTodo, todos, onDataLocalStorage }: any) {
     const data = [
       ...todos,
       {
-        id: todos.length + 1,
+        id: uuid(),
         done: false,
         task,
         createdAt: new Date()
