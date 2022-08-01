@@ -21,6 +21,7 @@ export function Form({ setTodo, todos, onDataLocalStorage }: any) {
 
     setTodo(data)
     onDataLocalStorage(data)
+    setTask("")
   }
 
   return (
