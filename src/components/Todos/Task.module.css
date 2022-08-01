@@ -73,6 +73,7 @@ button.trash:hover svg {
 }
 
 .textContainer {
+  word-break: break-word;
   display: flex;
   flex: 1;
   flex-direction: column;
