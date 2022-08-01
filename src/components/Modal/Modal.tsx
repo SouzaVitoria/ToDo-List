@@ -6,7 +6,7 @@ import ptBR from "date-fns/locale/pt-BR"
 import { ModalProps } from '../../typings/typings'
 import styles from "./Modal.module.css"
 
-export function Modal({ todo }: ModalProps) {
+export function Modal({ todo, onDeletedTask, onCompletedTodo }: ModalProps) {
   const [isOpen, setIsOpen] = useState(false)
   const createdAt = format(new Date(todo.createdAt), "dd'/'LL'/'yyyy' às 'HH':'mm'h'", {
     locale: ptBR
@@ -75,6 +75,20 @@ export function Modal({ todo }: ModalProps) {
               <strong> A fazer: </strong>
               Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
             </p>
+            <div className={styles.actions}>
+              <button
+                className={styles.removed}
+                onClick={() => onDeletedTask(todo.id)}
+              >
+                Excluir
+              </button>
+              <button
+                className={todo.done ? styles.undo : styles.completed}
+                onClick={() => onCompletedTodo(todo.id)}
+              >
+                {todo.done ? "Refazer" : "Concluir"}
+              </button>
+            </div>
           </div>
         </Dialog.Panel>
       </Dialog>

@@ -12,6 +12,4 @@ export interface TaskProps {
   onDeletedTask: (id: number) => void
 }
 
-export interface ModalProps {
-  todo: ITask
-}
+export interface ModalProps extends TaskProps { }

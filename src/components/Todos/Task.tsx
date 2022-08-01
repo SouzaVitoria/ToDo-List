@@ -19,7 +19,11 @@ export function Task({ todo, onCompletedTodo, onDeletedTask }: TaskProps) {
         </a>
       </div>
       <div className={styles.informations}>
-        <Modal todo={todo} />
+        <Modal
+          todo={todo}
+          onDeletedTask={onDeletedTask}
+          onCompletedTodo={onCompletedTodo}
+        />
         <button
           className={styles.trash}
           onClick={() => onDeletedTask(todo.id)}

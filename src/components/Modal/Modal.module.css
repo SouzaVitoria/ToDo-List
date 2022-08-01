@@ -76,3 +76,34 @@
   gap: 0.25rem;
   line-height: 1.125rem;
 }
+
+div.actions {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+div.actions button {
+  padding: 0.5rem;
+  font-size: 0.75rem;
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s opacity;
+}
+
+div.actions button:hover {
+  opacity: 0.8;
+}
+
+div.actions button.completed {
+  background-color: var(--success);
+}
+
+div.actions button.removed {
+  background-color: var(--danger);
+}
+
+div.actions button.undo {
+  background-color: var(--blue-dark);
+}
