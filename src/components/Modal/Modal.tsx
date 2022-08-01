@@ -39,6 +39,7 @@ export function Modal({ todo, onDeletedTask, onCompletedTodo }: ModalProps) {
           <button
             className={styles.closeModal}
             onClick={closeModal}
+            title="Fechar Modal"
           >
             <X size={20} color="#E25858" />
           </button>
@@ -79,12 +80,14 @@ export function Modal({ todo, onDeletedTask, onCompletedTodo }: ModalProps) {
               <button
                 className={styles.removed}
                 onClick={() => onDeletedTask(todo.id)}
+                title="Excluir Tarefa"
               >
                 Excluir
               </button>
               <button
                 className={todo.done ? styles.undo : styles.completed}
                 onClick={() => onCompletedTodo(todo.id)}
+                title={todo.done ? "Desmarcar conclusão" : "Concluir tarefa"}
               >
                 {todo.done ? "Refazer" : "Concluir"}
               </button>

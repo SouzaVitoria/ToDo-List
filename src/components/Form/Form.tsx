@@ -34,7 +34,7 @@ export function Form({ setTodo, todos, onDataLocalStorage }: any) {
         value={task}
         onChange={event => setTask(event.target.value)}
       />
-      <button>
+      <button title="Criar nova tarefa">
         Criar
         <PlusCircle size={32} />
       </button>

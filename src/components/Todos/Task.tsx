@@ -27,6 +27,7 @@ export function Task({ todo, onCompletedTodo, onDeletedTask }: TaskProps) {
         <button
           className={styles.trash}
           onClick={() => onDeletedTask(todo.id)}
+          title="Excluir Tarefa"
         >
           <Trash size={24} />
         </button>
