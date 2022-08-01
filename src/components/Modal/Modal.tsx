@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
-import { CheckCircle, PlusCircle, X, Flag } from 'phosphor-react'
+import { CheckCircle, PlusCircle, X, Flag, Info } from 'phosphor-react'
 import { format } from "date-fns"
 import ptBR from "date-fns/locale/pt-BR"
 import { ModalProps } from '../../typings/typings'
@@ -25,7 +25,7 @@ export function Modal({ todo }: ModalProps) {
         className={styles.openModal}
         title="Ver mais"
       >
-        Ver mais
+        <Info size={20} weight="bold" color="#f2f2f2" />
       </button>
 
       <Dialog

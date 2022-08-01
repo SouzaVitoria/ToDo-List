@@ -17,15 +17,16 @@ export function Task({ todo, onCompletedTodo, onDeletedTask }: TaskProps) {
             {todo.task}
           </p>
         </a>
-        <Modal todo={todo} />
       </div>
-
-      <button
-        className={styles.trash}
-        onClick={() => onDeletedTask(todo.id)}
-      >
-        <Trash size={24} />
-      </button>
+      <div className={styles.informations}>
+        <Modal todo={todo} />
+        <button
+          className={styles.trash}
+          onClick={() => onDeletedTask(todo.id)}
+        >
+          <Trash size={24} />
+        </button>
+      </div>
     </div>
   )
 }

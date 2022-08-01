@@ -8,6 +8,11 @@
   margin-top: -1rem;
   display: flex;
   margin: 0 auto;
+  transition: 0.3s background-color;
+}
+
+.openModal:hover {
+  background-color: var(--gray-400);
 }
 
 .closeModal {
