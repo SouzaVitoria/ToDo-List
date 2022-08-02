@@ -39,11 +39,18 @@ button {
 .container {
   max-width: 46rem;
   margin: 0 auto 2rem;
+  flex: 1;
 }
 
 :focus {
   outline: transparent;
   box-shadow: 0 0 0 2px var(--purple-dark);
+}
+
+div#root {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
 @media screen and (max-width: 1025px) {
