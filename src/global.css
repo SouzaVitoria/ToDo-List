@@ -60,5 +60,6 @@ div#root {
 
   .container {
     padding: 0.75rem;
+    margin: 0;
   }
 }
